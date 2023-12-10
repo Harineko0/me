@@ -18,10 +18,15 @@ a {
   text-decoration: underline;
 }
 
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem 2rem;
+}
+
 .root-container {
   display: grid;
   gap: 2rem;
-  padding: 1rem 2rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
   grid-template-areas:
@@ -29,8 +34,6 @@ a {
     "about about works contact"
     "twitter instagram github qiita"
     "twitter instagram github sizume";
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .root-container > * {
@@ -66,7 +69,12 @@ a {
 }
 
 @media screen and (max-width:480px) {
+  main {
+    padding: 1rem 1rem;
+  }
+
   .root-container {
+    gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
     /*grid-template-rows: repeat(10, 1fr);*/
     grid-template-areas:

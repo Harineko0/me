@@ -15,28 +15,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const year = new Date().getFullYear();
+
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <header className={'flex flex-row justify-between px-10 py-8'}>
-          <Link href={'/'} className={'no-underline'}>
+        <header className={'flex flex-row justify-between pl-4 pr-8 py-4'}>
+          <Link href={'/'} className={'no-underline flex flex-row items-center gap-1'}>
+            <img src={'harineko_logo.png'} alt={'harineko-logo'} width={36}/>
             harineko/me
           </Link>
-          {/*<div className={'flex flex-row gap-8'}>*/}
-          {/*  <Link href={'/'}>*/}
-          {/*    About*/}
-          {/*  </Link>*/}
-          {/*  <Link href={'/'}>*/}
-          {/*    Works*/}
-          {/*  </Link>*/}
-          {/*  <Link href={'/'}>*/}
-          {/*    Contact*/}
-          {/*  </Link>*/}
-          {/*</div>*/}
+          <div className={'flex flex-row items-center gap-6'}>
+            <Link href={'/articles'} className={'no-underline'}>
+              Articles
+            </Link>
+          </div>
         </header>
         {children}
         <footer>
-
         </footer>
       </body>
     </html>

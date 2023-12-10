@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import MailIcon from "@/component/icon/MailIcon";
 
 function Heading(props: {
