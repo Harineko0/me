@@ -19,20 +19,20 @@ export default function RootLayout({
     <html lang="ja">
       <body className={inter.className}>
         <header className={'flex flex-row justify-between px-16 py-8'}>
-          <Link href={'/'}>
+          <Link href={'/'} className={'no-underline'}>
             harineko/me
           </Link>
-          <div className={'flex flex-row gap-8'}>
-            <Link href={'/'}>
-              About
-            </Link>
-            <Link href={'/'}>
-              Works
-            </Link>
-            <Link href={'/'}>
-              Contact
-            </Link>
-          </div>
+          {/*<div className={'flex flex-row gap-8'}>*/}
+          {/*  <Link href={'/'}>*/}
+          {/*    About*/}
+          {/*  </Link>*/}
+          {/*  <Link href={'/'}>*/}
+          {/*    Works*/}
+          {/*  </Link>*/}
+          {/*  <Link href={'/'}>*/}
+          {/*    Contact*/}
+          {/*  </Link>*/}
+          {/*</div>*/}
         </header>
         {children}
         <footer>
