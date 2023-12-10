@@ -20,10 +20,10 @@ a {
 
 .root-container {
   display: grid;
-  gap: 1.25rem;
-  padding: 1.875rem;
+  gap: 2rem;
+  padding: 1rem 2rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
   grid-template-areas:
     "about about works contact"
     "about about works contact"
@@ -42,42 +42,51 @@ a {
   padding: 1.25rem;
 }
 
+.about {
+  grid-area: about;
+  aspect-ratio: 2/1;
+}
+
 @media screen and ( max-width:959px) {
   .root-container {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    /*grid-template-rows: repeat(6, 1fr);*/
     grid-template-areas:
     "about about works works"
     "about about works works"
-    "contact contact twitter instagram"
-    "contact contact twitter instagram"
-    "github github qiita sizume"
-    "github github qiita sizume"
+    "contact contact twitter twitter"
+    "contact contact twitter twitter"
+    "instagram instagram qiita qiita"
+    "github github sizume sizume"
+  }
+
+  .about {
+    aspect-ratio: 1/1;
   }
 }
 
 @media screen and (max-width:480px) {
   .root-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    /*grid-template-rows: repeat(10, 1fr);*/
     grid-template-areas:
     "about about"
     "about about"
     "works works"
     "works works"
     "contact contact"
-    "contact contact"
-    "twitter instagram"
-    "twitter instagram"
-    "github qiita"
-    "github sizume"
+    "twitter twitter"
+    "instagram instagram"
+    "github github"
+    "qiita qiita"
+    "sizume sizume"
+  }
+
+  .about {
+    aspect-ratio: unset;
   }
 }
 
-.about {
-  grid-area: about;
-  aspect-ratio: 2/1;
-}
 .works {
   grid-area: works;
 }

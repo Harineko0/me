@@ -18,7 +18,7 @@ export default function Home() {
         </Heading>
         <ul className={'dashed'}>
           <li>kusozako software developer</li>
-          <li>Java / Spigot / React / Next.js / Flutter / Firebase / Unity / Figma</li>
+          <li>Java / Spigot / C / React / Next.js / Flutter / Firebase / C# / Unity / Figma</li>
           <li>MincraServer Developer (2020-)</li>
           <li>Osaka University (2023.04-)</li>
           <li>GDSC Osaka (2023.04-)</li>
@@ -69,10 +69,55 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="instagram"></div>
-      <div className="github"></div>
-      <div className="sizume"></div>
-      <div className="qiita"></div>
+      <div className="instagram">
+        <div className={"flex flex-row gap-4"}>
+          <img src={'instagram.png'} alt={'instagram-logo'} width={24}/>
+          <h4 className={'text-base'}>Instagram</h4>
+        </div>
+        <div className={"flex flex-row items-center gap-4"}>
+          <img className={'rounded-full'} src={'twitter_harineko0.png'} alt={'instagram-harineko0-icon'}
+               width={40}/>
+          <a href={"https://www.instagram.com/harineko0"} target={"_blank"}>
+            harineko0
+          </a>
+        </div>
+      </div>
+      <div className="github">
+        <div className={"flex flex-row gap-4"}>
+          <img src={'github.svg'} alt={'github-logo'} width={24}/>
+          <h4 className={'text-base'}>GitHub</h4>
+        </div>
+        <div className={"flex flex-row items-center gap-4"}>
+          <img className={'rounded-full'} src={'github_harineko0.png'} alt={'github-harineko0-icon'}
+               width={40}/>
+          <a href={"https://github.com/Harineko0"} target={"_blank"}>
+            Harineko0
+          </a>
+        </div>
+      </div>
+      <div className="qiita">
+        <div className={"flex flex-row gap-4"}>
+          <img src={'qiita.png'} alt={'qiita-logo'} width={24}/>
+          <h4 className={'text-base'}>Qiita</h4>
+        </div>
+        <div className={"flex flex-row items-center gap-4"}>
+          <img className={'rounded-full'} src={'twitter_harineko0.png'} alt={'qiita-harineko0-icon'}
+               width={40}/>
+          <a href={"https://qiita.com/Harineko0"} target={"_blank"}>
+            harineko0
+          </a>
+        </div>
+      </div>
+      <div className="sizume">
+        <h4 className={'text-base'}>sizu.me</h4>
+        <div className={"flex flex-row items-center gap-4"}>
+          <img className={'rounded-full'} src={'twitter_harineko0.png'} alt={'sizume-harineko0-icon'}
+               width={40}/>
+          <a href={"https://sizu.me/harineko"} target={"_blank"}>
+            harineko
+          </a>
+        </div>
+      </div>
     </main>
   )
 }

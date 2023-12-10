@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'harineko/me',
-  description: 'Introduce my works',
+  description: 'harineko\'s portfolio',
 }
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <header className={'flex flex-row justify-between px-16 py-8'}>
+        <header className={'flex flex-row justify-between px-10 py-8'}>
           <Link href={'/'} className={'no-underline'}>
             harineko/me
           </Link>
