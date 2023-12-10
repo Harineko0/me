@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'harineko/me',
   description: 'harineko\'s portfolio',
+  metadataBase: new URL('https://harineko0.github.io'),
 }
 
 export default function RootLayout({
