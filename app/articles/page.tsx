@@ -1,7 +1,8 @@
 export default function Articles() {
   return (
     <main>
-      Coming Soon...
+      <h1>Articles</h1>
+
     </main>
   )
 }

@@ -6,7 +6,10 @@ import Link from "next/link";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'harineko/me',
+  title: {
+    default: 'harineko/me',
+    template: '%s | harineko/me'
+  },
   description: 'harineko\'s portfolio',
   metadataBase: new URL('https://harineko0.github.io'),
 }

@@ -1,4 +1,6 @@
 import MailIcon from "@/component/icon/MailIcon";
+import Image from "next/image";
+import './home.css';
 
 function Heading(props: {
   children?: React.ReactNode
@@ -10,7 +12,7 @@ function Heading(props: {
 
 export default function Home() {
   return (
-    <main className="root-container">
+    <main className="grid-container">
       <div className="about common-item">
         <Heading>
           About
@@ -19,7 +21,7 @@ export default function Home() {
           <li>kusozako software developer</li>
           <li>Java / Spigot / C / React / Next.js / Flutter / Firebase / C# / Unity / Figma</li>
           <li>MincraServer Developer (2020-)</li>
-          <li>Osaka University (2023.04-)</li>
+          <li>Osaka University CS (2023.04-)</li>
           <li>GDSC Osaka (2023.04-)</li>
         </ul>
       </div>
@@ -48,20 +50,20 @@ export default function Home() {
       </div>
       <div className="twitter">
         <div className={"flex flex-row gap-4"}>
-          <img src={'twitter.svg'} alt={'x-logo'} width={24}/>
+          <Image src={'/twitter.svg'} alt={'x-logo'} width={24} height={24}/>
           <h4 className={'text-base'}>X / Twitter</h4>
         </div>
         <div className={"flex flex-col gap-2"}>
           <div className={"flex flex-row items-center gap-4"}>
-            <img className={'rounded-full'} src={'twitter_harineko0.png'} alt={'twitter-harineko0-icon'}
-                 width={40}/>
+            <Image className={'rounded-full'} src={'/twitter_harineko0.png'} alt={'twitter-harineko0-icon'}
+                 width={40} height={40}/>
             <a href={"https://twitter.com/harineko0"} target={"_blank"}>
               @harineko0
             </a>
           </div>
           <div className={"flex flex-row items-center gap-4"}>
-            <img className={'rounded-full'} src={'twitter_harineko_univ.png'} alt={'twitter-harineko_univ-icon'}
-                 width={40}/>
+            <Image className={'rounded-full'} src={'/twitter_harineko_univ.png'} alt={'twitter-harineko_univ-icon'}
+                 width={40} height={40}/>
             <a href={"https://twitter.com/harineko_univ"} target={"_blank"}>
               @harineko_univ
             </a>
@@ -70,12 +72,12 @@ export default function Home() {
       </div>
       <div className="instagram">
         <div className={"flex flex-row gap-4"}>
-          <img src={'instagram.png'} alt={'instagram-logo'} width={24}/>
+          <Image src={'/instagram.png'} alt={'instagram-logo'} width={24} height={24}/>
           <h4 className={'text-base'}>Instagram</h4>
         </div>
         <div className={"flex flex-row items-center gap-4"}>
-          <img className={'rounded-full'} src={'twitter_harineko0.png'} alt={'instagram-harineko0-icon'}
-               width={40}/>
+          <Image className={'rounded-full'} src={'/twitter_harineko0.png'} alt={'instagram-harineko0-icon'}
+               width={40} height={40}/>
           <a href={"https://www.instagram.com/harineko0"} target={"_blank"}>
             harineko0
           </a>
@@ -83,12 +85,12 @@ export default function Home() {
       </div>
       <div className="github">
         <div className={"flex flex-row gap-4"}>
-          <img src={'github.svg'} alt={'github-logo'} width={24}/>
+          <Image src={'/github.svg'} alt={'github-logo'} width={24} height={24}/>
           <h4 className={'text-base'}>GitHub</h4>
         </div>
         <div className={"flex flex-row items-center gap-4"}>
-          <img className={'rounded-full'} src={'github_harineko0.png'} alt={'github-harineko0-icon'}
-               width={40}/>
+          <Image className={'rounded-full'} src={'/github_harineko0.png'} alt={'github-harineko0-icon'}
+               width={40} height={40}/>
           <a href={"https://github.com/Harineko0"} target={"_blank"}>
             Harineko0
           </a>
@@ -96,12 +98,12 @@ export default function Home() {
       </div>
       <div className="qiita">
         <div className={"flex flex-row gap-4"}>
-          <img src={'qiita.png'} alt={'qiita-logo'} width={24}/>
+          <Image src={'/qiita.png'} alt={'qiita-logo'} width={24} height={24}/>
           <h4 className={'text-base'}>Qiita</h4>
         </div>
         <div className={"flex flex-row items-center gap-4"}>
-          <img className={'rounded-full'} src={'twitter_harineko0.png'} alt={'qiita-harineko0-icon'}
-               width={40}/>
+          <Image className={'rounded-full'} src={'/twitter_harineko0.png'} alt={'qiita-harineko0-icon'}
+               width={40} height={40}/>
           <a href={"https://qiita.com/Harineko0"} target={"_blank"}>
             harineko0
           </a>
@@ -110,8 +112,8 @@ export default function Home() {
       <div className="sizume">
         <h4 className={'text-base'}>sizu.me</h4>
         <div className={"flex flex-row items-center gap-4"}>
-          <img className={'rounded-full'} src={'twitter_harineko0.png'} alt={'sizume-harineko0-icon'}
-               width={40}/>
+          <Image className={'rounded-full'} src={'/twitter_harineko0.png'} alt={'sizume-harineko0-icon'}
+               width={40} height={40}/>
           <a href={"https://sizu.me/harineko"} target={"_blank"}>
             harineko
           </a>
