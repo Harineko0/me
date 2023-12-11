@@ -25,7 +25,7 @@ export default function Home() {
           <li>GDSC Osaka (2023.04-)</li>
         </ul>
       </div>
-      <div className="works common-item">
+      <div className="works grid-item-outlined">
         <Heading>
           Works
         </Heading>
@@ -35,7 +35,7 @@ export default function Home() {
           <li><a href={'https://machikane-coffee.web.app/'} target={'_blank'}>machikane-coffee</a> (2023-)</li>
         </ul>
       </div>
-      <div className="contact common-item">
+      <div className="contact grid-item-outlined">
         <Heading>
           Contact
         </Heading>

@@ -18,10 +18,19 @@ a {
   text-decoration: underline;
 }
 
+h1 {
+  font-size: 1.5rem;
+}
+
 main {
   margin: 0 auto;
   max-width: 1200px;
   padding: 1rem 2rem;
+}
+@media screen and (max-width:480px) {
+  main {
+    padding: 1rem 1rem;
+  }
 }
 
 ul.dashed {
@@ -30,8 +39,8 @@ ul.dashed {
 }
 
 ul.dashed > li {
-  text-indent: -1.6rem;
-  padding-left: 1.6rem;
+  text-indent: -1.4rem;
+  padding-left: 1.4rem;
   font-size: 0.875rem;
   line-height: 2rem;
 }

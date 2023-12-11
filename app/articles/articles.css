@@ -1,0 +1,23 @@
+.articles-container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.articles-container > * {
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
+    padding: 1.25rem;
+    aspect-ratio: 2/1;
+    border: 1px solid var(--outline);
+}
+
+@media screen and (max-width:480px) {
+    .articles-container {
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+}
