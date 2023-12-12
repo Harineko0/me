@@ -1,13 +1,7 @@
 .grid-container {
     display: grid;
     gap: 2rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
-    grid-template-areas:
-    "about about works contact"
-    "about about works contact"
-    "twitter instagram github qiita"
-    "twitter instagram github sizume";
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .grid-container > * {
@@ -17,32 +11,32 @@
     gap: 1rem;
     flex-shrink: 0;
     padding: 1.25rem;
-    transition: all 0.2s ease;
-}
-.grid-container > *:hover {
-    transform: translateY(-4px);
 }
 
-.about {
-    grid-area: about;
-    aspect-ratio: 2/1;
+.grid-item-square {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.grid-item-half {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.grid-item-wide {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 @media screen and ( max-width:959px) {
     .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-        /*grid-template-rows: repeat(6, 1fr);*/
-        grid-template-areas:
-    "about about works works"
-    "about about works works"
-    "contact contact twitter twitter"
-    "contact contact twitter twitter"
-    "instagram instagram qiita qiita"
-    "github github sizume sizume"
+        grid-template-columns: repeat(3, 1fr);
     }
+}
 
-    .about {
-        aspect-ratio: 1/1;
+@media screen and ( max-width:800px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -50,33 +44,25 @@
     .grid-container {
         gap: 1rem;
         grid-template-columns: repeat(2, 1fr);
-        /*grid-template-rows: repeat(10, 1fr);*/
-        grid-template-areas:
-    "about about"
-    "about about"
-    "works works"
-    "works works"
-    "contact contact"
-    "twitter twitter"
-    "instagram instagram"
-    "github github"
-    "qiita qiita"
-    "sizume sizume"
     }
 
-    .about {
-        aspect-ratio: unset;
+    .grid-item-square {
+        grid-column: span 2;
+        grid-row: span 2;
     }
+
+    .grid-item-half {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .grid-item-wide {
+        grid-row: unset;
+    }
+
 }
 
-.works {
-    grid-area: works;
-}
-.contact {
-    grid-area: contact;
-}
 .twitter {
-    grid-area: twitter;
     background-color: #000;
     color: #FFF;
 }
@@ -85,22 +71,18 @@
 }
 
 .instagram {
-    grid-area: instagram;
     background-color: #FFF;
     color: #000;
 }
 .github {
-    grid-area: github;
     background-color: #24292F;
     color: #FFF;
 }
 .sizume {
-    grid-area: sizume;
     background-color: #F7FAFC;
     color: #000;
 }
 .qiita {
-    grid-area: qiita;
     background-color: #FFF;
     color: #000;
 }

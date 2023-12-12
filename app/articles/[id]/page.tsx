@@ -1,4 +1,4 @@
-import {fetchArticle, fetchArticles} from "@/app/articles/articleApi";
+import {fetchArticle, fetchArticles} from "@/_api/articleApi";
 import markdownHtml from "zenn-markdown-html";
 import Link from "next/link";
 import 'zenn-content-css';
@@ -16,12 +16,12 @@ export default async function ArticlePage({params}: {
     const article = await fetchArticle(id);
 
     return (
-        <main>
+        <main className={"max-w-screen-md"}>
             {article ?
                 <div className={"flex flex-col gap-16 mt-4"}>
-                    <div className={"flex flex-row gap-10 items-center"}>
+                    <div className={"flex flex-col gap-4 items-start"}>
                         <h1 className={"text-2xl"}>{article.title}</h1>
-                        <p className={"text-foreground-variant"}>{article.created_at.toLocaleDateString()}</p>
+                        <div className={"text-gray-400 text-sm"}>{article.created_at.toLocaleDateString()}</div>
                     </div>
                     <div
                         className="znc"

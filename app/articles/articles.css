@@ -14,17 +14,6 @@
     padding: 1.25rem;
     border: 1px solid var(--outline);
     overflow: hidden;
-    transition: all 0.2s ease;
-}
-
-.articles-container > *:focus {
-    background-color: rgba(241, 241, 241, 50);
-    transform: translateY(4px);
-}
-
-.articles-container > *:hover {
-    background-color: rgba(241, 241, 241, 50);
-    transform: translateY(-4px);
 }
 
 @media screen and (max-width:959px) {

@@ -1,13 +1,18 @@
-import MailIcon from "@/component/icon/MailIcon";
+import MailIcon from "@/components/icon/MailIcon";
 import Image from "next/image";
 import './home.css';
-import TwitterIcon from "@/component/icon/TwitterIcon";
-import InstagramIcon from "@/component/icon/InstagramIcon";
-import GitHubIcon from "@/component/icon/GitHubIcon";
-import QiitaIcon from "@/component/icon/QiitaIcon";
+import TwitterIcon from "@/components/icon/TwitterIcon";
+import InstagramIcon from "@/components/icon/InstagramIcon";
+import GitHubIcon from "@/components/icon/GitHubIcon";
+import QiitaIcon from "@/components/icon/QiitaIcon";
 import TwitterHarineko from "@/assets/images/twitter_harineko0.png";
 import TwitterHarinekoUniv from "@/assets/images/twitter_harineko_univ.png";
 import GitHubHarineko from "@/assets/images/github_harineko0.png";
+import GitHubMincra from "@/assets/images/github_mincra.jpg";
+import GitHubGDSC from "@/assets/images/github_gdsc.jpg";
+import {fetchArticles} from "@/_api/articleApi";
+import Link from "next/link";
+import {StaticImport} from "next/dist/shared/lib/get-img-props";
 
 function Heading(props: {
   children?: React.ReactNode
@@ -17,10 +22,29 @@ function Heading(props: {
   )
 }
 
-export default function Home() {
+function MyselfLink(props: {
+  src: StaticImport,
+  alt: string,
+  href: string,
+  id: string,
+}) {
+  return (
+    <div className={"flex flex-row items-center gap-4"}>
+      <Image className={'rounded-full'} src={props.src} alt={props.alt}
+             width={40} height={40}/>
+      <a href={props.href} target={"_blank"}>
+        {props.id}
+      </a>
+    </div>
+  )
+}
+
+export default async function Home() {
+  const articles = (await fetchArticles()).slice(0, 5); // 最新から5つ
+
   return (
     <main className="grid-container">
-      <div className="about grid-item-outlined">
+      <div className="grid-item-wide grid-item-outlined">
         <Heading>
           About
         </Heading>
@@ -32,7 +56,7 @@ export default function Home() {
           <li>GDSC Osaka (2023.04-)</li>
         </ul>
       </div>
-      <div className="works grid-item-outlined">
+      <div className="grid-item-square grid-item-outlined">
         <Heading>
           Works
         </Heading>
@@ -42,7 +66,7 @@ export default function Home() {
           <li><a href={'https://machikane-coffee.web.app/'} target={'_blank'}>machikane-coffee</a> (2023-)</li>
         </ul>
       </div>
-      <div className="contact grid-item-outlined">
+      <div className="grid-item-square grid-item-outlined">
         <Heading>
           Contact
         </Heading>
@@ -55,76 +79,56 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="twitter">
-        <div className={"flex flex-row gap-4"}>
-          <TwitterIcon width={24} height={24}/>
-          <h4 className={'text-base'}>X / Twitter</h4>
-        </div>
-        <div className={"flex flex-col gap-2"}>
-          <div className={"flex flex-row items-center gap-4"}>
-            <Image className={'rounded-full'} src={TwitterHarineko} alt={'twitter-harineko0-icon'}
-                 width={40} height={40}/>
-            <a href={"https://twitter.com/harineko0"} target={"_blank"}>
-              @harineko0
-            </a>
-          </div>
-          <div className={"flex flex-row items-center gap-4"}>
-            <Image className={'rounded-full'} src={TwitterHarinekoUniv} alt={'twitter-harineko_univ-icon'}
-                 width={40} height={40}/>
-            <a href={"https://twitter.com/harineko_univ"} target={"_blank"}>
-              @harineko_univ
-            </a>
-          </div>
-        </div>
+      <div className="grid-item-square grid-item-outlined">
+        <Heading>
+          Articles
+        </Heading>
+        <ul className={"dashed"}>
+          {articles.map(article => <li key={article.id}>
+            <Link href={`/articles/${article.id}`}>
+              {article.title}
+            </Link>
+          </li>)}
+        </ul>
       </div>
-      <div className="instagram">
-        <div className={"flex flex-row gap-4"}>
-          <InstagramIcon width={24} height={24}/>
-          <h4 className={'text-base'}>Instagram</h4>
-        </div>
-        <div className={"flex flex-row items-center gap-4"}>
-          <Image className={'rounded-full'} src={TwitterHarineko} alt={'instagram-harineko0-icon'}
-               width={40} height={40}/>
-          <a href={"https://www.instagram.com/harineko0"} target={"_blank"}>
-            harineko0
-          </a>
-        </div>
-      </div>
-      <div className="github">
+      <div className="github grid-item-square">
         <div className={"flex flex-row gap-4"}>
           <GitHubIcon width={24} height={24}/>
           <h4 className={'text-base'}>GitHub</h4>
         </div>
-        <div className={"flex flex-row items-center gap-4"}>
-          <Image className={'rounded-full'} src={GitHubHarineko} alt={'github-harineko0-icon'}
-               width={40} height={40}/>
-          <a href={"https://github.com/Harineko0"} target={"_blank"}>
-            Harineko0
-          </a>
+        <div className={"flex flex-col gap-3"}>
+          <MyselfLink src={GitHubHarineko} alt={"github-harineko0-icon"} href={"https://github.com/Harineko0"} id={"Harineko0"}/>
+          <MyselfLink src={GitHubMincra} alt={"github-mincra-icon"} href={"https://github.com/MincraServer"} id={"MincraServer"}/>
+          <MyselfLink src={GitHubGDSC} alt={"github-gdsc-icon"} href={"https://github.com/gdsc-osaka"} id={"GDSC Osaka"}/>
         </div>
       </div>
-      <div className="qiita">
+      <div className="twitter grid-item-square">
+        <div className={"flex flex-row gap-4"}>
+          <TwitterIcon width={24} height={24}/>
+          <h4 className={'text-base'}>X / Twitter</h4>
+        </div>
+        <div className={"flex flex-col gap-3"}>
+          <MyselfLink src={TwitterHarineko} alt={"twitter-harineko0-icon"} href={"\"https://twitter.com/harineko0"} id={"harineko0"}/>
+          <MyselfLink src={TwitterHarinekoUniv} alt={"twitter-harineko_univ-icon"} href={"https://twitter.com/harineko_univ"} id={"harineko_univ"}/>
+        </div>
+      </div>
+      <div className="instagram grid-item-half">
+        <div className={"flex flex-row gap-4"}>
+          <InstagramIcon width={24} height={24}/>
+          <h4 className={'text-base'}>Instagram</h4>
+        </div>
+        <MyselfLink src={TwitterHarineko} alt={"instagram-harineko0-icon"} href={"https://www.instagram.com/harineko0"} id={"harineko0"}/>
+      </div>
+      <div className="qiita grid-item-half">
         <div className={"flex flex-row gap-4"}>
           <QiitaIcon width={24} height={24}/>
           <h4 className={'text-base'}>Qiita</h4>
         </div>
-        <div className={"flex flex-row items-center gap-4"}>
-          <Image className={'rounded-full'} src={TwitterHarineko} alt={'qiita-harineko0-icon'}
-               width={40} height={40}/>
-          <a href={"https://qiita.com/Harineko0"} target={"_blank"}>
-            harineko0
-          </a>
-        </div>
+        <MyselfLink src={TwitterHarineko} alt={"qiita-harineko0-icon"} href={"https://qiita.com/Harineko0"} id={"Harineko0"}/>
       </div>
-      <div className="sizume">
+      <div className="sizume grid-item-half">
         <h4 className={'text-base'}>sizu.me</h4>
-        <div className={"flex flex-row items-center gap-4"}>
-          <Image className={'rounded-full'} src={TwitterHarineko} alt={'sizume-harineko0-icon'}
-               width={40} height={40}/>
-          <a href={"https://sizu.me/harineko"} target={"_blank"}>
-            harineko
-          </a>
-        </div>
+        <MyselfLink src={TwitterHarineko} alt={"sizume-harineko0-icon"} href={"https://sizu.me/harineko"} id={"harineko"}/>
       </div>
     </main>
   )

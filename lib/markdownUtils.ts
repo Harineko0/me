@@ -1,7 +1,7 @@
 import * as jsdom from "jsdom";
 import markdownHtml from 'zenn-markdown-html';
 
-export async function parseTextFromMarkDown(markdown: string) {
+export function parseTextFromMarkDown(markdown: string) {
     const html = markdownHtml(markdown);
     const dom = new jsdom.JSDOM(html);
     const doc = dom.window.document;

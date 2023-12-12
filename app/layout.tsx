@@ -25,7 +25,7 @@ export default function RootLayout({
 
   return (
     <html lang="ja">
-      <body className={inter.className}>
+      <body className={`${inter.className} flex flex-col h-screen`}>
         <header className={'flex flex-row justify-between pl-4 pr-8 py-4'}>
           <Link href={'/'} className={'no-underline flex flex-row items-center gap-1'}>
             <Image src={Logo} alt={'harineko-logo'} width={36}/>
@@ -38,7 +38,8 @@ export default function RootLayout({
           </div>
         </header>
         {children}
-        <footer>
+        <footer className={"flex flex-row items-center justify-center text-sm text-foreground-variant py-10 mt-auto"}>
+          harineko © 2023
         </footer>
       </body>
     </html>

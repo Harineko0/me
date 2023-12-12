@@ -1,7 +1,19 @@
+## ウェブサイトできました
+自分のウェブサイト兼ポートフォリオサイトを作った  
+
+使用したフレームワークは Next.js, ホスティングは GitHub Pages を使用  
+
+Articles にはQiita/Zenn/sizu.me等で書いた記事をまとめて置いておくつもり  
+
+## ちなみに
+ArticleはMarkdownファイルをビルド時に読み込んで生成しています。
+Markdown の描画・パースには Zenn 公式のライブラリを使いました。  
+
+以下該当のコード:
+
+```TypeScript
 import path from "path";
 import fsPromises from "fs/promises";
-import exp from "constants";
-import {json} from "stream/consumers";
 
 export type Article = {
     id: string,
@@ -105,3 +117,4 @@ export async function fetchArticle(id: string) {
 
     return article;
 }
+```

@@ -2,7 +2,10 @@ import {Metadata} from "next";
 import "./articles.css";
 
 export const metadata: Metadata = {
-  title: 'Articles',
+  title: {
+    template: '%s | harineko/me', // /articles/[id] の title のために必要
+    default: 'Articles'
+  },
   description: '',
 }
 
