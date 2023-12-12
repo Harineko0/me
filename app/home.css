@@ -17,6 +17,10 @@
     gap: 1rem;
     flex-shrink: 0;
     padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+.grid-container > *:hover {
+    transform: translateY(-4px);
 }
 
 .about {

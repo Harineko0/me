@@ -15,7 +15,8 @@ const config: Config = {
       },
     },
     colors: {
-      foreground: '#555'
+      foreground: '#555',
+      "foreground-variant": '#777'
     }
   },
   plugins: [],

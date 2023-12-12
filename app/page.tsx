@@ -6,8 +6,8 @@ import InstagramIcon from "@/component/icon/InstagramIcon";
 import GitHubIcon from "@/component/icon/GitHubIcon";
 import QiitaIcon from "@/component/icon/QiitaIcon";
 import TwitterHarineko from "@/assets/images/twitter_harineko0.png";
-import TwitterHarinekoUniv from "@/assets/images/twitter_harineko_univ.png.png";
-import GitHubHarineko from "@/assets/images/github_harineko0.png.png.png";
+import TwitterHarinekoUniv from "@/assets/images/twitter_harineko_univ.png";
+import GitHubHarineko from "@/assets/images/github_harineko0.png";
 
 function Heading(props: {
   children?: React.ReactNode
@@ -20,7 +20,7 @@ function Heading(props: {
 export default function Home() {
   return (
     <main className="grid-container">
-      <div className="about common-item">
+      <div className="about grid-item-outlined">
         <Heading>
           About
         </Heading>
